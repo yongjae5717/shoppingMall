@@ -1,0 +1,32 @@
+server:
+  port: 9000
+
+spring:
+  h2:
+    console:
+      enabled: true
+  config:
+    import:
+      - application-local.yml
+      - application-jwt.yml
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        format_sql: true
+        show_sql: true
+  profiles:
+    include: jwt
+
+logging.level:
+  org.hibernate.SQL: debug
+  org.hibernate.type: trace
+
+springdoc:
+  swagger-ui:
+    path: swagger.html
+  version: v1
+  paths-to-match:
+    - /api/**
