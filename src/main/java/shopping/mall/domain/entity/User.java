@@ -33,6 +33,9 @@ public class User {
 
     private String nickname;
 
+    @Embedded
+    private Address address;
+
     @ManyToMany
     @JoinTable(
             name = "user_authority",

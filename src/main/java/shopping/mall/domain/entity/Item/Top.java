@@ -14,4 +14,9 @@ public class Top extends Item{
 
     private String brand;
     private String size;
+
+    public Top(String brand, String size) {
+        this.brand = brand;
+        this.size = size;
+    }
 }

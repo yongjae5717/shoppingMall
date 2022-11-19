@@ -1,6 +1,7 @@
 package shopping.mall.web.user.service;
 
 import java.util.Collections;
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.http.HttpHeaders;
@@ -150,4 +151,8 @@ public class UserService {
     }
 
 
+    //회원 전체 조회
+    public List<User> findMembers() {
+        return userRepository.findAll();
+    }
 }

@@ -16,7 +16,8 @@ public enum ExceptionEnum {
     DUPLICATE_NICKNAME(HttpStatus.BAD_REQUEST, "E003", "닉네임이 중복됩니다."),
     TOKEN_EMPTY(HttpStatus.UNAUTHORIZED, "E004", "토근을 보유하고 있지 않습니다."),
     NOT_FOUND_EMAIL(HttpStatus.BAD_REQUEST, "E005", "이메일을 찾을 수 없습니다."),
-    NOT_ENOUGH_STOCK(HttpStatus.BAD_REQUEST, "E006", "재고가 모두 소진되었습니다.");
+    NOT_ENOUGH_STOCK(HttpStatus.BAD_REQUEST, "E006", "재고가 모두 소진되었습니다."),
+    NOT_FOUND_ITEM(HttpStatus.BAD_REQUEST, "E007", "아이템을 찾을 수 없습니다.");
 
 
     private final HttpStatus status;
