@@ -1,6 +1,7 @@
 package shopping.mall.web.user.controller;
 
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -14,6 +15,7 @@ import javax.validation.Valid;
 
 @RestController
 @RequestMapping("/api")
+@Tag(name = "인증관리 API")
 public class AuthController {
 
     private final UserService userService;

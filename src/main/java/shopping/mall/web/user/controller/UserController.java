@@ -1,10 +1,10 @@
 package shopping.mall.web.user.controller;
 
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
-import shopping.mall.domain.entity.User;
 import shopping.mall.web.user.dto.*;
 import shopping.mall.web.user.service.UserService;
 
@@ -15,6 +15,7 @@ import java.io.IOException;
 
 @RestController
 @RequestMapping("/api")
+@Tag(name = "회원관리 API")
 public class UserController {
     private final UserService userService;
 

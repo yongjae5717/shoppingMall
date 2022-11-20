@@ -17,7 +17,7 @@ public class ApiDocsConfig {
     @Bean
     public OpenAPI openAPI(@Value("${springdoc.version}") String springdocVersion) {
         Info info = new Info()
-                .title("ShoppingMall")
+                .title("쇼핑몰 REST API PROJECT")
                 .version(springdocVersion)
                 .description(" ");
 
