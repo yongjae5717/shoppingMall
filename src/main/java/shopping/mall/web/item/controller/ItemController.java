@@ -1,12 +1,12 @@
-package shopping.mall.web.order.controller;
+package shopping.mall.web.item.controller;
 
 import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
-import shopping.mall.web.order.dto.*;
-import shopping.mall.web.order.service.ItemService;
+import shopping.mall.web.item.dto.*;
+import shopping.mall.web.item.service.ItemService;
 
 import javax.validation.Valid;
 

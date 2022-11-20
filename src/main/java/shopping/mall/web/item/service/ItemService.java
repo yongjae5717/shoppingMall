@@ -1,4 +1,4 @@
-package shopping.mall.web.order.service;
+package shopping.mall.web.item.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -11,7 +11,7 @@ import shopping.mall.domain.entity.Item.Top;
 import shopping.mall.domain.repository.BottomRepository;
 import shopping.mall.domain.repository.ItemRepository;
 import shopping.mall.domain.repository.TopRepository;
-import shopping.mall.web.order.dto.*;
+import shopping.mall.web.item.dto.*;
 
 import java.util.List;
 

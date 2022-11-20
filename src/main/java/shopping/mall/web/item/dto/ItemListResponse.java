@@ -1,9 +1,6 @@
-package shopping.mall.web.order.dto;
+package shopping.mall.web.item.dto;
 
 import lombok.Data;
-import shopping.mall.domain.entity.Item.Item;
-
-import java.util.List;
 
 @Data
 public class ItemListResponse {

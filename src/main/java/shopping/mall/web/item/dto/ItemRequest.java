@@ -1,4 +1,4 @@
-package shopping.mall.web.order.dto;
+package shopping.mall.web.item.dto;
 
 import lombok.Data;
 
