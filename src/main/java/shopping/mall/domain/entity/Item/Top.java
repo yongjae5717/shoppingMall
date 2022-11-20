@@ -19,4 +19,8 @@ public class Top extends Item{
         this.brand = brand;
         this.size = size;
     }
+
+    public void setBrand(String brand){
+        this.brand = brand;
+    }
 }

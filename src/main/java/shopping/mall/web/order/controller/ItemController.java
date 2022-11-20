@@ -5,9 +5,10 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
-import shopping.mall.web.order.dto.ItemRequest;
-import shopping.mall.web.order.dto.ItemResponse;
+import shopping.mall.web.order.dto.*;
 import shopping.mall.web.order.service.ItemService;
+
+import javax.validation.Valid;
 
 @RestController
 @RequiredArgsConstructor
@@ -18,14 +19,37 @@ public class ItemController {
     @Operation(description = "상의 등록")
     @PostMapping("/items/new/top")
     @PreAuthorize("hasAnyRole('ADMIN')")
-    public ResponseEntity<ItemResponse> createTop(ItemRequest itemRequest) {
+    public ResponseEntity<ItemResponse> createTop(@Valid @RequestBody ItemRequest itemRequest) {
         return ResponseEntity.ok(itemService.createTop(itemRequest));
     }
 
     @Operation(description = "하의 등록")
     @PostMapping("/items/new/bottom")
     @PreAuthorize("hasAnyRole('ADMIN')")
-    public ResponseEntity<ItemResponse> createBottom(ItemRequest itemRequest) {
+    public ResponseEntity<ItemResponse> createBottom(@Valid @RequestBody ItemRequest itemRequest) {
         return ResponseEntity.ok(itemService.createBottom(itemRequest));
     }
+
+    @Operation(description = "상품 조회")
+    @GetMapping("/items")
+    public ResponseEntity<ItemListResponse> getItemList(){
+        return ResponseEntity.ok(itemService.getItemList());
+    }
+
+    @Operation(description = "상품 수정")
+    @PutMapping("/item/update/{id}")
+    @PreAuthorize("hasAnyRole('ADMIN')")
+    public ResponseEntity<UpdateItemResponse> updateItem(
+            @PathVariable("id") Long id,
+            @Valid @RequestBody UpdateItemRequest updateItemRequest){
+        return ResponseEntity.ok(itemService.updateItem(id, updateItemRequest));
+    }
+
+    @Operation(description = "상품 삭제")
+    @DeleteMapping("item/delete/{id}")
+    @PreAuthorize("hasAnyRole('ADMIN')")
+    public ResponseEntity<DeleteItemResponse> deleteItem(@PathVariable("id") Long id){
+        return ResponseEntity.ok(itemService.deleteItem(id));
+    }
+
 }
