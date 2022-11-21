@@ -111,7 +111,7 @@ public class InitDb {
         }
 
         private Delivery createDelivery(User user) {
-            return new Delivery(user.getAddress());
+            return new Delivery(user.getAddress(), DeliveryStatus.READY);
         }
     }
 }
