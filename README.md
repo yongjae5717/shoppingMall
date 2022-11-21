@@ -4,8 +4,8 @@
 
 <div><h2>💁 Business Logic</h2></div>
 
-- 관리자: 상품을 등록, 수정, 삭제 할 수 있다.
-- 유저: 상품을 주문, 조회, 취소할 수 있다.
+- 관리자: 상품을 등록, 수정, 삭제 및 상품의 이미지 등록을 할 수 있다.
+- 유저: 상품을 주문, 조회, 취소 및 상품의 이미지를 다운로드 받을 수 있다.
 
 <div><h2>📚 STACKS</h2></div>
 
@@ -73,6 +73,12 @@
 ![](image/Orders.png)
 </details>
 
+<details>
+<summary> FileInfoEntity </summary>
+
+![](image/FileInfoEntity.png)
+</details>
+
 <div><h2>🤚 Swagger UI</h2></div>
 
 ### 회원 관리 API
@@ -87,6 +93,8 @@
 ### 인증 API
 ![](image/swaggerAuthApi.png)
 
+### 파일 API
+![](image/swaggerFileApi.png)
 
 <div><h2> ❌ Common Error </h2></div>
 
