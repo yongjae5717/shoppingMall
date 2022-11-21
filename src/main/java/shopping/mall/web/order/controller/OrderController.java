@@ -6,10 +6,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
-import shopping.mall.web.item.service.ItemService;
 import shopping.mall.web.order.dto.*;
 import shopping.mall.web.order.service.OrderService;
-import shopping.mall.web.user.service.UserService;
 
 import javax.validation.Valid;
 

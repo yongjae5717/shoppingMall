@@ -54,4 +54,13 @@ public class ItemController {
         return ResponseEntity.ok(itemService.deleteItem(id));
     }
 
+    @Operation(description = "상세 상품 조회")
+    @GetMapping("/items/{id}")
+    public ResponseEntity<DetailItemResponse> getItem(
+            @PathVariable("id") Long id
+    ){
+        return ResponseEntity.ok(itemService.getItem(id));
+    }
+
+
 }

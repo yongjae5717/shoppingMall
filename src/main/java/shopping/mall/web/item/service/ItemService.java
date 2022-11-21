@@ -82,4 +82,9 @@ public class ItemService {
 
         return new DeleteItemResponse(true, "상품 삭제 성공");
     }
+
+    public DetailItemResponse getItem(Long id){
+        Item findItem = itemRepository.findById(id).orElseThrow(() -> new ApiException(ExceptionEnum.NOT_FOUND_ITEM));
+        return new DetailItemResponse(true, "상세 상품 조회 성공", findItem);
+    }
 }
