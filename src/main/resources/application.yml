@@ -1,6 +1,12 @@
 server:
   port: 9000
 
+file:
+  upload:
+    top: /Users/yjk/mall/files/top
+    bottom: /Users/yjk/mall/files/bottom
+
+
 spring:
   h2:
     console:
