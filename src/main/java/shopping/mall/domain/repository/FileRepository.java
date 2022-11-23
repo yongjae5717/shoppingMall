@@ -23,9 +23,9 @@ public class FileRepository {
         return em.find(FileInfoEntity.class, name);
     }
 
-    public List<FileInfoEntity> findByUsage(FileUsage usage){
-        return em.createQuery("select f from FileInfoEntity f where f.usage = :usage", FileInfoEntity.class)
-                .setParameter("usage", usage)
+    public List<FileInfoEntity> findByUsage(FileUsage usages){
+        return em.createQuery("select f from FileInfoEntity f where f.usages = :usages", FileInfoEntity.class)
+                .setParameter("usages", usages)
                 .getResultList();
     }
 

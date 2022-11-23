@@ -36,9 +36,9 @@ public class FilePathConfig {
     /**
      * 파일저장경로지정
      */
-    String determinePath(FileUsage usage) {
+    String determinePath(FileUsage usages) {
         String path = "";
-        switch (usage) {
+        switch (usages) {
             case TOP:
                 path = this.top;
                 break;

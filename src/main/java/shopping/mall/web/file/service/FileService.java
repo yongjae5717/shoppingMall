@@ -40,9 +40,9 @@ public class FileService {
      * 파일 업로드
      */
     @Transactional
-    public String save(MultipartFile multipartFile, FileUsage usage, Long memberId) {
-        String uploadPath = pathConfig.determinePath(usage); //파일저장경로지정
-        FileInfoEntity file = FileInfoEntity.createFileInfo(multipartFile, usage, uploadPath, memberId);
+    public String save(MultipartFile multipartFile, FileUsage usages, Long memberId) {
+        String uploadPath = pathConfig.determinePath(usages); //파일저장경로지정
+        FileInfoEntity file = FileInfoEntity.createFileInfo(multipartFile, usages, uploadPath, memberId);
         fileRepository.save(file);
         return file.getName();
     }
@@ -77,13 +77,13 @@ public class FileService {
 
     @Transactional
     public UploadReceiptResponse uploadReceipt(FileRequest fileRequest){
-        String fileName = save(fileRequest.getFile(), fileRequest.getUsage(), fileRequest.getMemberId());
+        String fileName = save(fileRequest.getFile(), fileRequest.getUsages(), fileRequest.getMemberId());
         return new UploadReceiptResponse(true, "파일 업로드 성공", fileName);
     }
 
 
-    public LoadAllByUsageResponse loadAllByUsage(FileUsage usage) {
-        List<FileDto> fileDtos = fileRepository.findByUsage(usage)
+    public LoadAllByUsageResponse loadAllByUsage(FileUsage usages) {
+        List<FileDto> fileDtos = fileRepository.findByUsage(usages)
                 .stream().map(FileDto::new)
                 .collect(Collectors.toList());
         return new LoadAllByUsageResponse(true, "조회 성공", fileDtos);

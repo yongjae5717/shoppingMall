@@ -71,9 +71,9 @@ public class FileController {
 
     @Operation(description = "파일 정보 용도별 전체 조회")
     @PreAuthorize("hasAnyRole('USER','ADMIN')")
-    @GetMapping("/files/{usage}")
-    public ResponseEntity<LoadAllByUsageResponse> loadAllByUsage(@PathVariable FileUsage usage) {
-        return ResponseEntity.ok(fileService.loadAllByUsage(usage));
+    @GetMapping("/files/{usages}")
+    public ResponseEntity<LoadAllByUsageResponse> loadAllByUsage(@PathVariable FileUsage usages) {
+        return ResponseEntity.ok(fileService.loadAllByUsage(usages));
     }
 
 }

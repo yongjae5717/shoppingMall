@@ -11,7 +11,7 @@ public class FileRequest {
     @NotNull
     private MultipartFile file;
     @NotNull
-    private FileUsage usage;
+    private FileUsage usages;
     @NotNull
     private Long memberId;
 }

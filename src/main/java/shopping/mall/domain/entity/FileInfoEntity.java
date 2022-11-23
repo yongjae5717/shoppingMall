@@ -48,12 +48,12 @@ public class FileInfoEntity {
     /**
      * 로컬 pc에 파일 저장 후 fileEntity 생성
      */
-    public static FileInfoEntity createFileInfo(MultipartFile multipartFile, FileUsage usage, String uploadPath, Long memberId) {
+    public static FileInfoEntity createFileInfo(MultipartFile multipartFile, FileUsage usages, String uploadPath, Long memberId) {
         String ext = FilenameUtils.getExtension(multipartFile.getOriginalFilename()); //파일 확장자 꺼내기
         String name = UUID.randomUUID() + "." + ext;
 
         return new FileInfoEntity(name,
-                usage,
+                usages,
                 multipartFile.getOriginalFilename(),
                 uploadPath,
                 LocalDateTime.now(),
