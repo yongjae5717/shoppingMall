@@ -21,7 +21,7 @@ public class FileInfoEntity {
     private String name;
 
     @Enumerated(EnumType.STRING)
-    private FileUsage usage;
+    private FileUsage usages;
 
     private String originalName;
 
@@ -31,11 +31,11 @@ public class FileInfoEntity {
 
     private Long memberId;
 
-    private FileInfoEntity(String name, FileUsage usage,
+    private FileInfoEntity(String name, FileUsage usages,
                            String originalName, String path,
                            LocalDateTime savingDate, Long memberId, MultipartFile multipartFile) {
         this.name = name;
-        this.usage = usage;
+        this.usages = usages;
         this.originalName = originalName;
         this.path = path;
         this.savingDate = savingDate;
