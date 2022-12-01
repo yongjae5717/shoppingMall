@@ -23,13 +23,13 @@ public class UserController {
         this.userService = userService;
     }
 
-    @Operation(description = "redirect 테스트")
+    @Operation(summary = "redirect 테스트")
     @PostMapping("/test-redirect")
     public void testRedirect(HttpServletResponse response) throws IOException {
         response.sendRedirect("/api/user");
     }
 
-    @Operation(description = "회원가입")
+    @Operation(summary = "회원가입")
     @PostMapping("/signup")
     public ResponseEntity<UserCreateResponse> signup(
             @Valid @RequestBody UserDto userDto
@@ -37,21 +37,21 @@ public class UserController {
         return ResponseEntity.ok(userService.signup(userDto));
     }
 
-    @Operation(description = "회원정보 검색")
+    @Operation(summary = "회원정보 검색")
     @GetMapping("/user")
     @PreAuthorize("hasAnyRole('USER','ADMIN')")
     public ResponseEntity<UserDto> getMyUserInfo(HttpServletRequest request) {
         return ResponseEntity.ok(userService.getMyUserWithAuthorities());
     }
 
-    @Operation(description = "관리자용 회원정보 검색")
+    @Operation(summary = "관리자용 회원정보 검색")
     @GetMapping("/user/{username}")
     @PreAuthorize("hasAnyRole('ADMIN')")
     public ResponseEntity<UserDto> getUserInfo(@PathVariable String username) {
         return ResponseEntity.ok(userService.getUserWithAuthorities(username));
     }
 
-    @Operation(description = "회원정보 수정")
+    @Operation(summary = "회원정보 수정")
     @PutMapping("/user/update")
     @PreAuthorize("hasAnyRole('USER','ADMIN')")
     public ResponseEntity<UpdateUserResponse> updateUser(
@@ -59,7 +59,7 @@ public class UserController {
         return ResponseEntity.ok(userService.updateUser(updateUserRequest));
     }
 
-    @Operation(description = "회원 탈퇴")
+    @Operation(summary = "회원 탈퇴")
     @DeleteMapping("/user/delete")
     @PreAuthorize("hasAnyRole('USER','ADMIN')")
     public ResponseEntity<DeleteUserResponse> deleteUser(){

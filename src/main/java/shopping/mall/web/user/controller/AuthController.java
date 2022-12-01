@@ -25,7 +25,7 @@ public class AuthController {
         this.userService = userService;
     }
 
-    @Operation(description = "로그인")
+    @Operation(summary = "로그인")
     @PostMapping("/login")
     public ResponseEntity<UserLoginResponse> authorize(@Valid @RequestBody UserLoginRequest userLoginRequest) {
         return ResponseEntity.ok(userService.login(userLoginRequest));

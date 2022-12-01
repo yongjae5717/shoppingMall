@@ -18,27 +18,27 @@ import javax.validation.Valid;
 public class ItemController {
     private final ItemService itemService;
 
-    @Operation(description = "상의 등록")
+    @Operation(summary = "상의 등록")
     @PostMapping("/items/new/top")
     @PreAuthorize("hasAnyRole('ADMIN')")
     public ResponseEntity<ItemResponse> createTop(@Valid @RequestBody ItemRequest itemRequest) {
         return ResponseEntity.ok(itemService.createTop(itemRequest));
     }
 
-    @Operation(description = "하의 등록")
+    @Operation(summary = "하의 등록")
     @PostMapping("/items/new/bottom")
     @PreAuthorize("hasAnyRole('ADMIN')")
     public ResponseEntity<ItemResponse> createBottom(@Valid @RequestBody ItemRequest itemRequest) {
         return ResponseEntity.ok(itemService.createBottom(itemRequest));
     }
 
-    @Operation(description = "상품 조회")
+    @Operation(summary = "상품 조회")
     @GetMapping("/items")
     public ResponseEntity<ItemListResponse> getItemList(){
         return ResponseEntity.ok(itemService.getItemList());
     }
 
-    @Operation(description = "상품 수정")
+    @Operation(summary = "상품 수정")
     @PutMapping("/item/update/{id}")
     @PreAuthorize("hasAnyRole('ADMIN')")
     public ResponseEntity<UpdateItemResponse> updateItem(
@@ -47,14 +47,14 @@ public class ItemController {
         return ResponseEntity.ok(itemService.updateItem(id, updateItemRequest));
     }
 
-    @Operation(description = "상품 삭제")
+    @Operation(summary = "상품 삭제")
     @DeleteMapping("item/delete/{id}")
     @PreAuthorize("hasAnyRole('ADMIN')")
     public ResponseEntity<DeleteItemResponse> deleteItem(@PathVariable("id") Long id){
         return ResponseEntity.ok(itemService.deleteItem(id));
     }
 
-    @Operation(description = "상세 상품 조회")
+    @Operation(summary = "상세 상품 조회")
     @GetMapping("/items/{id}")
     public ResponseEntity<DetailItemResponse> getItem(
             @PathVariable("id") Long id

@@ -26,14 +26,14 @@ public class FileController {
 
     private final FileService fileService;
 
-    @Operation(description = "파일 업로드 (POSTMAN) Form-data 등록")
+    @Operation(summary = "파일 업로드 (POSTMAN) Form-data 등록")
     @PreAuthorize("hasAnyRole('ADMIN')")
     @PostMapping(value = "/files")
     public ResponseEntity<UploadReceiptResponse> uploadReceipt(@ModelAttribute @Valid FileRequest fileRequest) {
         return ResponseEntity.ok(fileService.uploadReceipt(fileRequest));
     }
 
-    @Operation(description = "파일 다운로드")
+    @Operation(summary = "파일 다운로드")
     @PreAuthorize("hasAnyRole('USER','ADMIN')")
     @GetMapping(value = "/files/download/{name}")
     public ResponseEntity<Resource> loadFile(@PathVariable String name) {
@@ -42,7 +42,7 @@ public class FileController {
                 "attachment; filename=\"" + resource.getFilename() + "\"").body(resource);
     }
 
-    @Operation(description = "파일 이미지 조회")
+    @Operation(summary = "파일 이미지 조회")
     @PreAuthorize("hasAnyRole('USER','ADMIN')")
     @GetMapping("/files/images/{name}")
     public ResponseEntity<Resource> showImage(@PathVariable String name) {
@@ -61,14 +61,14 @@ public class FileController {
         return new ResponseEntity<>(resource, header, HttpStatus.OK);
     }
 
-    @Operation(description = "파일 삭제")
+    @Operation(summary = "파일 삭제")
     @PreAuthorize("hasAnyRole('USER','ADMIN')")
     @PostMapping("/files/delete/{name}")
     public ResponseEntity<DeleteFileResponse> deleteFile(@PathVariable String name){
         return ResponseEntity.ok(fileService.deleteFiles(name));
     }
 
-    @Operation(description = "파일 정보 용도별 전체 조회")
+    @Operation(summary = "파일 정보 용도별 전체 조회")
     @PreAuthorize("hasAnyRole('USER','ADMIN')")
     @GetMapping("/files/{usages}")
     public ResponseEntity<LoadAllByUsageResponse> loadAllByUsage(@PathVariable FileUsage usages) {
