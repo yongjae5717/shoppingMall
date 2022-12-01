@@ -36,6 +36,8 @@ public class User {
     @Embedded
     private Address address;
 
+    private String profileUrl;
+
     @ManyToMany
     @JoinTable(
             name = "user_authority",
@@ -58,5 +60,9 @@ public class User {
 
     public void updateUser(String password) {
         this.password = password;
+    }
+
+    public void setProfileUrl(String profileUrl) {
+        this.profileUrl = profileUrl;
     }
 }

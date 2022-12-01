@@ -1,6 +1,7 @@
 application-local.yml
 application-jwt.yml
 application-mysql.yml
+application-dev.yml
 
 /Users/yjk/mall/files/
 

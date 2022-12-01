@@ -58,6 +58,7 @@ public class UserService {
                 .username(userDto.getUsername())
                 .birth(userDto.getBirth())
                 .nickname(userDto.getNickname())
+                .profileUrl("https://helloworld4204.s3.ap-northeast-2.amazonaws.com/default.png")
                 .authorities(Collections.singleton(authority))
                 .activated(true)
                 .build();

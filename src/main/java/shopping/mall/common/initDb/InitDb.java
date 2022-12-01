@@ -48,6 +48,7 @@ public class InitDb {
                     .birth("19971020")
                     .nickname("admin")
                     .address(new Address("서울", "가로수길", "11111"))
+                    .profileUrl("https://helloworld4204.s3.ap-northeast-2.amazonaws.com/default.png")
                     .authorities(Collections.singleton(new Authority("ROLE_ADMIN")))
                     .activated(true)
                     .orders(new ArrayList<>())
@@ -84,6 +85,7 @@ public class InitDb {
                     .nickname("hello2")
                     .address(new Address("포항", "북구", "22222"))
                     .authorities(Collections.singleton(new Authority("ROLE_USER")))
+                    .profileUrl("https://helloworld4204.s3.ap-northeast-2.amazonaws.com/default.png")
                     .activated(true)
                     .orders(new ArrayList<>())
                     .build();

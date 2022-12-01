@@ -10,7 +10,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import shopping.mall.domain.entity.FileUsage;
-import shopping.mall.domain.repository.FileRepository;
 import shopping.mall.web.file.dto.*;
 import shopping.mall.web.file.service.FileService;
 
@@ -22,7 +21,7 @@ import java.nio.file.Paths;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api")
-@Tag(name = "파일 API")
+@Tag(name = "local 파일 API")
 public class FileController {
 
     private final FileService fileService;

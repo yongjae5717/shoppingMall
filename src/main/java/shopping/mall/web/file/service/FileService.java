@@ -19,6 +19,7 @@ import shopping.mall.domain.repository.FileRepository;
 import shopping.mall.web.file.dto.*;
 import shopping.mall.web.item.dto.DetailItemResponse;
 
+import java.io.IOException;
 import java.net.MalformedURLException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -35,6 +36,7 @@ public class FileService {
     private final FileRepository fileRepository;
     private final FilePathConfig pathConfig;
 
+    private final S3Upload s3Upload;
 
     /**
      * 파일 업로드
@@ -93,5 +95,22 @@ public class FileService {
     public DeleteFileResponse deleteFiles(String name) {
         deleteFile(name);
         return new DeleteFileResponse(true, "파일 삭제 성공");
+    }
+
+    @Transactional
+    public FileUploadResponse upload(MultipartFile multipartFile) throws IOException {
+        String fileUrl = s3Upload.upload(multipartFile);
+        return new FileUploadResponse(true, "프로필 업로드 성공", fileUrl);
+    }
+
+    @Transactional
+    public FileUpdateResponse update(MultipartFile multipartFile) throws IOException {
+        String fileUrl = s3Upload.update(multipartFile);
+        return new FileUpdateResponse(true, "프로필 업데이트 성공", fileUrl);
+    }
+
+    public FileGetResponse getProfileImage() {
+        String profileImageUrl = s3Upload.getProfileImage();
+        return new FileGetResponse(true, "프로필 이미지 조회 성공", profileImageUrl);
     }
 }
