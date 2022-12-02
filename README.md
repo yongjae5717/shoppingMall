@@ -92,24 +92,33 @@
 ### 상품 API
 ![](image/swaggerItemApi.png)
 
+### Cloud 파일 API
+![](image/swaggerCloudFileApi.png)
+
 ### 주문 API
 ![](image/swaggerOrderApi.png)
 
 ### 인증 API
 ![](image/swaggerAuthApi.png)
 
-### 파일 API
+### Local 파일 API
 ![](image/swaggerFileApi.png)
+
+<div><h2>🤚 Architecture</h2></div>
+
+![](image/Architecture.png)
 
 <div><h2> ❌ Common Error </h2></div>
 
-| error | message           | HttpStatus   |
-|-------|-------------------|--------------|
-| E000  | 이미 가입되어 있는 이메일입니다 | BAD_REQUEST  |
-| E001  | 멤버를 찾을 수 없습니다     | NOT_FOUND    |
-| E002  | 필수 항목이 누락되었습니다    | BAD_REQUEST  |
-| E003  | 닉네임이 중복됩니다        | BAD_REQUEST  |
-| E004  | 토근을 보유하고 있지 않습니다  | UNAUTHORIZED |
-| E005  | 이메일을 찾을 수 없습니다    | BAD_REQUEST  |
-| E006  | 재고가 모두 소진되었습니다    | BAD_REQUEST  |
-| E007  | 아이템을 찾을 수 없습니다    | BAD_REQUEST  |
+| error | message                    | HttpStatus   |
+|-------|----------------------------|--------------|
+| E000  | 이미 가입되어 있는 이메일입니다.         | BAD_REQUEST  |
+| E001  | 멤버를 찾을 수 없습니다.             | NOT_FOUND    |
+| E002  | 필수 항목이 누락되었습니다.            | BAD_REQUEST  |
+| E003  | 닉네임이 중복됩니다.                | BAD_REQUEST  |
+| E004  | 토근을 보유하고 있지 않습니다.          | UNAUTHORIZED |
+| E005  | 이메일을 찾을 수 없습니다.            | BAD_REQUEST  |
+| E006  | 재고가 모두 소진되었습니다.            | BAD_REQUEST  |
+| E007  | 아이템을 찾을 수 없습니다.            | BAD_REQUEST  |
+| E008  | 확장자가 jpg, jpeg, png와 다릅니다. | BAD_REQUEST  |
+| E009  | 이미 취소된 주문입니다.              | BAD_REQUEST  |

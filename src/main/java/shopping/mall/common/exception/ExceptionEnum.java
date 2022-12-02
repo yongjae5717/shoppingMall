@@ -18,7 +18,8 @@ public enum ExceptionEnum {
     NOT_FOUND_EMAIL(HttpStatus.BAD_REQUEST, "E005", "이메일을 찾을 수 없습니다."),
     NOT_ENOUGH_STOCK(HttpStatus.BAD_REQUEST, "E006", "재고가 모두 소진되었습니다."),
     NOT_FOUND_ITEM(HttpStatus.BAD_REQUEST, "E007", "아이템을 찾을 수 없습니다."),
-    NOT_MATCH_EXT(HttpStatus.BAD_REQUEST, "E008", "확장자가 다릅니다.");
+    NOT_MATCH_EXT(HttpStatus.BAD_REQUEST, "E008", "확장자가 jpg, jpeg, png와 다릅니다."),
+    ALREADY_CANCEL(HttpStatus.BAD_REQUEST, "E009", "이미 취소된 주문입니다.");
 
 
     private final HttpStatus status;

@@ -3,27 +3,17 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.multipart.MultipartFile;
-import shopping.mall.common.exception.ApiException;
-import shopping.mall.common.exception.ExceptionEnum;
 import shopping.mall.domain.entity.FileInfoEntity;
 import shopping.mall.domain.entity.FileUsage;
-import shopping.mall.domain.entity.Item.Item;
 import shopping.mall.domain.repository.FileRepository;
 import shopping.mall.web.file.dto.*;
-import shopping.mall.web.item.dto.DetailItemResponse;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
-import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.List;
 import java.util.stream.Collectors;
 
