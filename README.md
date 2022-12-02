@@ -14,6 +14,9 @@
 <img src="https://img.shields.io/badge/spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white">
 <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">
 <img src="https://img.shields.io/badge/mysql-4479A1?style=for-the-badge&logo=mysql&logoColor=white">
+<img src="https://img.shields.io/badge/amazon S3-569A31?style=for-the-badge&logo=amazonS3&logoColor=white">
+<img src="https://img.shields.io/badge/H2 Database-007396?style=for-the-badge&logo=h2&logoColor=white">
+<img src="https://img.shields.io/badge/amazon EC2-FF9900?style=for-the-badge&logo=amazonEC2&logoColor=white">
 </div>
 
 #### JPA, JWT, Security
